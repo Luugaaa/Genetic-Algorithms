@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb  6 15:37:10 2017
-
-@author: Natan
-"""
-
 class Individu:
     def __init__(self,numero_population,p1):
         self.p1=p1;
