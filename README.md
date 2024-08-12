@@ -24,11 +24,14 @@ The goal is to determine the optimal strategy for each player, defined by probab
    - Replace the worst strategy with a mutated version of the best strategy to ensure exploration of new strategies.
    - Repeat this process for a set number of iterations to evolve optimal strategies.
 
-### Results and Observations
+#### Convergence Analysis
 
-We analyze the convergence behavior of the genetic algorithm under different population sizes and iteration counts. The project includes graphical representations of convergence rates and discussions on the underlying reasons for observed behavior.
+- **Population Size Impact**: With larger populations (e.g., \( N1 = N2 = 100 \)), the algorithm quickly converges to a stable set of strategies where both players have an approximately equal chance of winning. The convergence rate is slower with smaller populations, where strategies tend to oscillate more before stabilizing.
 
-Additionally, the project extends the approach to the classic Rock-Paper-Scissors game to identify the optimal mixed strategy.
+- **Optimal Strategies**: After sufficient iterations (e.g., \( \text{iterations} = 1000 \)), the optimal strategy for Player 1 is to play "even" with a probability of 0.5 and "odd" with a probability of 0.5. The same holds true for Player 2, indicating that in this zero-sum game, the best strategy is a mixed one with equal probabilities.
+
+- **Rock-Paper-Scissors Extension**: When applying the genetic algorithm to the Rock-Paper-Scissors game, the optimal strategy evolved to an equal probability of 1/3 for each move, confirming the Nash equilibrium for this game.
+
 
 ## Project 2: Optimal Strategies in Poker-Like Game
 
@@ -54,4 +57,8 @@ The possible outcomes are as follows:
 
 ### Results and Observations
 
-The project explores the optimal strategies for both players and analyzes how the strategies change under different game rules and bet amounts. The results include comparisons between different scenarios and visual representations of the strategy functions.
+- **Initial Findings**: In the early iterations (e.g., first 500 iterations), Player 1 tends to bet more aggressively when holding a higher number, while Player 2 initially calls conservatively, resulting in a lower frequency of large losses.
+
+- **Final Strategy**: After 2000 iterations, the optimal strategy for Player 1 stabilizes such that they bet when their number is greater than 0.7 with a probability of 0.9 and refrain from betting otherwise. Player 2's optimal response is to call when their number is greater than 0.5 with a probability of 0.85, folding otherwise.
+
+- **Impact of Bet Amount (B)**: As the bet amount \( B \) increases, both players become more conservative. Player 1 reduces their betting frequency, and Player 2 increases their folding frequency, minimizing the risk of large losses.
